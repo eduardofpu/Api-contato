@@ -33,7 +33,7 @@ public class ContatoControler {
 
     @DeleteMapping(path = "deletecontato/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void delete@PathVariable("id") Long id){       
+    void delete(@PathVariable("id") Long id){
         contatoService.delete(id);
 
     }
