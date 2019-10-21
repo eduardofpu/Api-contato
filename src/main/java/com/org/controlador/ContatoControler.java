@@ -31,10 +31,9 @@ public class ContatoControler {
         return  contatoService.create(contato);
     }
 
-    @DeleteMapping(path = "deletecontato")
+    @DeleteMapping(path = "deletecontato/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void delete(@RequestBody Contato contato){
-        Long id = contato.getId();
+    void delete@PathVariable("id") Long id){       
         contatoService.delete(id);
 
     }
