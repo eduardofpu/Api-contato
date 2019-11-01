@@ -4,6 +4,7 @@ import com.org.Repositorio.ContatoRepositorio;
 import com.org.Service.ContatoService;
 import com.org.modelo.Contato;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -20,8 +21,8 @@ public class ContatoServiceImpl implements ContatoService {
     }
 
     @Override
-    public List<Contato> finAll() {
-        return contatoRepositorio.getContatoOrderBy();
+    public List<Contato> findAll(Pageable pageable) {
+        return contatoRepositorio.getContatoOrderBy(pageable);
     }
 
     @Override

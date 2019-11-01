@@ -3,6 +3,7 @@ package com.org.controlador;
 import com.org.Service.ContatoService;
 import com.org.modelo.Contato;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +22,8 @@ public class ContatoControler {
 
     @GetMapping(path = "buscarcontato")
     @ResponseStatus(HttpStatus.OK)
-    List<Contato> findAll(){
-        return  contatoService.finAll();
+    List<Contato> findAll(Pageable pageable) {
+        return  contatoService.findAll(pageable);
     }
 
     @PostMapping(path = "savecontato")
