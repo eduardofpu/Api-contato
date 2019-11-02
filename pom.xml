@@ -14,6 +14,7 @@
     <groupId>com.org</groupId>
     <artifactId>contato</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <name>contato</name>
     <description>contato</description>
